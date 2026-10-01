@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">QuickCampus</string>
+    <string name="title_activity_main">QuickCampus</string>
+    <string name="package_name">com.quickcampus.erp</string>
+    <string name="custom_url_scheme">com.quickcampus.erp</string>
+</resources>
