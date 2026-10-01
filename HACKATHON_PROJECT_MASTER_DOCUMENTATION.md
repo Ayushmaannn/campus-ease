@@ -1,8 +1,9 @@
-# 🎓 QuickCampus: Next-Generation AI-Powered College ERP System
-## Smart India Hackathon (SIH) 2026 — Master Project Documentation & Submission Dossier
+# 🎓 CampusEase: Next-Generation AI-Powered College ERP System
+## Idea & Innovation Hackathon 2026 — MPOnline Limited | Master Project Documentation & Submission Dossier
 
-> **Project Name:** QuickCampus / Smart College ERP  
-> **Target Track:** Smart Education, University Administration & Campus Automation  
+> **Project Name:** CampusEase  
+> **Hackathon:** Idea & Innovation Hackathon 2026 | Organized by MPOnline Limited  
+> **Theme:** Technology, Innovation & E-Governance | *Innovate for Madhya Pradesh. Build for Viksit Bharat.*  
 > **Tech Stack:** React 18, Vite, Tailwind/Vanilla CSS, Python FastAPI, SQLAlchemy 2.0, PostgreSQL, Google Gemini AI (EduBot RAG), Celery/Redis  
 > **Document Purpose:** Complete, presentation-ready specification designed to generate all **8 Hackathon Submission Documents** and **Technical Flowcharts** for the Hackathon 2026 Portal.
 
@@ -26,16 +27,16 @@
 # Document 1: Solution Synopsis / Executive Summary
 
 ### 1.1 Executive Summary
-**QuickCampus** is a next-generation, cloud-native, unified College Enterprise Resource Planning (ERP) platform architected to eliminate the fragmentation, manual friction, and data opacity plaguing contemporary higher educational institutions. Built upon an asynchronous Python FastAPI micro-backend and a responsive React SPA frontend, QuickCampus integrates four fundamental campus stakeholder personas (**Students, Faculty, Administrators, and Parents**) into an interconnected digital nervous system.
+**CampusEase** is a next-generation, cloud-native, unified College Enterprise Resource Planning (ERP) platform architected to eliminate the fragmentation, manual friction, and data opacity plaguing contemporary higher educational institutions. Built upon an asynchronous Python FastAPI micro-backend and a responsive React SPA frontend, CampusEase integrates four fundamental campus stakeholder personas (**Students, Faculty, Administrators, and Parents**) into an interconnected digital nervous system.
 
-At the core of QuickCampus lies **EduBot**, a contextual Multi-Persona AI Assistant powered by Google Gemini and Retrieval-Augmented Generation (RAG). EduBot acts as a 24/7 copilot that transcends simple text query responses by dynamically retrieving, parsing, and rendering institutional documents, grade sheets, fee receipts, timetable schedules, and predictive academic alerts directly within the conversation viewport.
+At the core of CampusEase lies **EduBot**, a contextual Multi-Persona AI Assistant powered by Google Gemini and Retrieval-Augmented Generation (RAG). EduBot acts as a 24/7 copilot that transcends simple text query responses by dynamically retrieving, parsing, and rendering institutional documents, grade sheets, fee receipts, timetable schedules, and predictive academic alerts directly within the conversation viewport.
 
-QuickCampus couples daily academic workflows (dynamic QR/geofenced attendance, continuous internal grading, examination scheduling, hostel and transport fleet tracking) with institutional governance capabilities (IoT utility telemetry, automated fee ledger reconciliation, and tamper-proof QR-verified digital certificates aligned with DigiLocker and National Education Policy (NEP 2020) standards).
+CampusEase couples daily academic workflows (digital attendance management, continuous internal grading, examination scheduling, hostel and transport fleet tracking) with institutional governance capabilities (IoT utility telemetry, automated fee ledger reconciliation, and tamper-proof QR-verified digital certificates aligned with DigiLocker and National Education Policy (NEP 2020) standards).
 
 ### 1.2 Key Highlights & Value Propositions
 - **Unified Multi-Stakeholder Ecosystem:** Tailored role-based interfaces with zero information silos across Student, Faculty, Admin, and Parent portals.
 - **Contextual Multi-Persona AI (EduBot):** Role-swapping intelligence featuring *AcadBot* (Student), *FacultyAI* (Faculty), *CampusOps* (Admin), and *GuardianBot* (Parent) delivering actionable answers and live institutional documents.
-- **Multi-Modal Smart Attendance:** Hybrid verification supporting dynamic rotating QR codes, geofencing, facial biometric capture, and faculty manual overrides, cutting proxy attendance by 99%.
+- **Smart Attendance System:** Digital attendance management with faculty-controlled marking, class schedule integration, and automated subject-wise attendance tracking.
 - **Academic Early Warning Engine:** Continuous AI risk analytics analyzing internal marks, attendance trends, and behavioral metrics to flag students at risk of detention or dropout before end-semester exams.
 - **Tamper-Proof Credentialing:** Digital issuance of Bonafide certificates and grade sheets with cryptographic QR hash verification for instant public/employer validation.
 - **Parental Transparency Bridge:** Real-time visibility into student attendance, SGPA/CGPA cards, fee payment gateways, and direct Parent-Teacher Meeting (PTM) booking.
@@ -48,7 +49,7 @@ QuickCampus couples daily academic workflows (dynamic QR/geofenced attendance, c
 This blueprint outlines a 12-slide high-impact pitch deck for the evaluation jury:
 
 ### Slide 1: Title & Hook
-- **Header:** QuickCampus — Intelligent, Connected & Autonomous Campus ERP
+- **Header:** CampusEase — Intelligent, Connected & Autonomous Campus ERP
 - **Sub-header:** Transforming Higher Education Administration with Contextual AI & Transparent Governance
 - **Visuals:** High-resolution mockup of the Student Dashboard alongside the EduBot AI Assistant.
 - **Tagline:** One Unified Platform. Four Stakeholders. Infinite Efficiency.
@@ -59,12 +60,12 @@ This blueprint outlines a 12-slide high-impact pitch deck for the evaluation jur
 - **Pain Point 3:** Parent disconnect—guardians only discover poor performance or attendance shortage during final exams.
 - **Pain Point 4:** Administrative burnout—colleges spend 35% of staff hours on manual paperwork, certificate stamping, and fee reconciliation.
 
-### Slide 3: The QuickCampus Solution
+### Slide 3: The CampusEase Solution
 - **Overview:** An integrated web-first platform bridging Students, Faculty, Administrators, and Parents.
 - **Core Pillars:**
   1. *Autonomous Administration:* One-click admissions, automated fee ledgers, automated timetable optimization.
   2. *Intelligent Co-Pilots:* Role-adapted Gemini AI answering queries and dispatching verified PDFs.
-  3. *Zero-Trust Integrity:* QR-verified certificates, anti-proxy multi-modal attendance, role-based encryption.
+  3. *Zero-Trust Integrity:* QR-verified certificates, digital attendance management, role-based encryption.
 
 ### Slide 4: Stakeholder Experience Matrix
 - **Student Portal:** Attendance radar, timetable, examination SGPA/CGPA card, fee payment gateway, hostel/bus tracker.
@@ -80,8 +81,8 @@ This blueprint outlines a 12-slide high-impact pitch deck for the evaluation jur
   - *GuardianBot:* Delivers transparent, reassuring updates to parents on fees, attendance, and mentor feedback.
 - Highlight interactive document generation: delivers clickable PDFs (Receipts, Grade Cards, Bonafide Letters) directly in the chat.
 
-### Slide 6: Smart Attendance & Academic Analytics
-- **Dynamic QR Token System:** 30-second time-based cryptographic QR code displayed on faculty screen; eliminates proxy attendance.
+### Slide 6: Attendance Management & Academic Analytics
+- **Digital Attendance System:** Faculty-controlled subject-wise digital attendance marking with real-time tracking and reporting.
 - **Predictive Early Warning System (EWS):** Regression model computing student detention risk score ($R = w_1(100 - Att\%) + w_2(Marks_{internal}) + w_3(Assignment_{latency})$).
 
 ### Slide 7: Technical Architecture
@@ -96,7 +97,7 @@ This blueprint outlines a 12-slide high-impact pitch deck for the evaluation jur
 - 90% reduction in document issuance delays (from 4 days to instant QR verification).
 - 40% improvement in fee collection turnaround time via UPI/Razorpay integration.
 - 65% reduction in administrative staff workload through automated workflows.
-- 99% elimination of proxy attendance.
+- Significant improvement in attendance data accuracy via digital tracking.
 
 ### Slide 10: Implementation Roadmap & Feasibility
 - 4-Phase implementation timeline across 16 weeks (Pilot Setup $\to$ Core Academic Rollout $\to$ Parent & Finance Integration $\to$ IoT & AI Optimization).
@@ -457,49 +458,13 @@ stateDiagram-v2
 
 ---
 
-### Flowchart 4: Smart Anti-Proxy Attendance Verification Pipeline
-
-```mermaid
-flowchart TD
-    Start([Faculty Initiates Lecture Session]) --> ModeChoice{Select Verification Mode}
-    
-    ModeChoice -->|Dynamic QR| GenQR[Generate 30-sec Rotating Time-Based QR Code]
-    ModeChoice -->|Geo-Fencing| GeoCheck[Broadcast Classroom Coordinates + 50m Radius]
-    ModeChoice -->|Face Biometrics| FaceDetect[Client Face Match vs Admission Photo]
-    ModeChoice -->|Manual| ManualList[Faculty One-Tap Attendance Grid]
-    
-    GenQR --> StudentScan[Student Scans QR via QuickCampus Mobile/Web App]
-    GeoCheck --> StudentScan
-    FaceDetect --> StudentScan
-    
-    StudentScan --> ValidateToken{Is QR Token Valid & Unexpired?}
-    ValidateToken -- No --> Reject[Reject: QR Expired or Duplicate Submission]
-    ValidateToken -- Yes --> CheckGeo{Is Device within Classroom Bounds?}
-    
-    CheckGeo -- No --> RejectGeo[Reject: Geolocation Mismatch]
-    CheckGeo -- Yes --> MarkDB[(Write AttendanceRecord to PostgreSQL)]
-    ManualList --> MarkDB
-    
-    MarkDB --> CalcPct[Recalculate Cumulative Subject Attendance %]
-    CalcPct --> ThresholdCheck{Is Attendance < 75%?}
-    ThresholdCheck -- Yes --> AlertTrigger[Fire Early Warning Alert to Student & Parent Portal]
-    ThresholdCheck -- No --> SafeStatus[Mark in Good Academic Standing]
-    
-    AlertTrigger --> End([Session Complete & Records Synchronized])
-    SafeStatus --> End
-    Reject --> End
-    RejectGeo --> End
-```
-
----
-
-### Flowchart 5: Fee Payment & Automated Ledger Reconciliation
+### Flowchart 4: Fee Payment & Automated Ledger Reconciliation
 
 ```mermaid
 sequenceDiagram
     autonumber
     actor P as Student / Parent
-    participant UI as QuickCampus Payments UI
+    participant UI as CampusEase Payments UI
     participant API as FastAPI /api/v1/fees
     participant PG as Payment Gateway (Razorpay/UPI)
     participant DB as PostgreSQL Fee Ledger
@@ -523,7 +488,7 @@ sequenceDiagram
 
 ---
 
-### Flowchart 6: Blockchain / QR Tamper-Proof Certificate Verification
+### Flowchart 5: Blockchain / QR Tamper-Proof Certificate Verification
 
 ```mermaid
 flowchart LR
@@ -549,7 +514,7 @@ flowchart LR
 
 ---
 
-### Flowchart 7: Predictive Academic Risk Analytics & Early Warning Engine
+### Flowchart 6: Predictive Academic Risk Analytics & Early Warning Engine
 
 ```mermaid
 flowchart TD
@@ -578,7 +543,7 @@ flowchart TD
 
 ---
 
-### Flowchart 8: Role-Based Access Control (RBAC) & Route Security Flow
+### Flowchart 7: Role-Based Access Control (RBAC) & Route Security Flow
 
 ```mermaid
 flowchart TD
@@ -636,12 +601,12 @@ flowchart TD
 
 ## 🚀 Summary & Quick Export Guidance
 
-This master file contains all authoritative content required to create the 8 PDFs for the **Hackathon 2026 Portal Workspace**:
+This master file contains all authoritative content required to create the 8 PDFs for the **Idea & Innovation Hackathon 2026 Portal Workspace**:
 1. **Document 1 (Synopsis):** Extract Section 1.
 2. **Document 2 (Presentation):** Use the 12-slide blueprint in Section 2.
 3. **Document 3 (Problem & Solution):** Extract Section 3.
 4. **Document 4 (Innovation):** Extract Section 4.
 5. **Document 5 (Impact & Benefits):** Extract Section 5.
 6. **Document 6 (Feasibility & Rollout):** Extract Section 6.
-7. **Document 7 (Technology Architecture):** Extract Section 7 and Mermaid Flowcharts 1, 6, and 8.
-8. **Document 8 (Prototype / POC):** Extract Section 8 and Flowcharts 2, 4, and 5.
+7. **Document 7 (Technology Architecture):** Extract Section 7 and Mermaid Flowcharts 1, 5, and 7.
+8. **Document 8 (Prototype / POC):** Extract Section 8 and Flowcharts 2, 4, and 6.

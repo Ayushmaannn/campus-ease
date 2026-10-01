@@ -1,5 +1,5 @@
 # 🎓 CampusEase: Next-Generation AI-Powered College ERP System
-### Smart India Hackathon (SIH) 2026 — Master Project & Technical Architecture Dossier
+### Idea & Innovation Hackathon 2026 — MPOnline Limited | Technology, Innovation & E-Governance
 
 [![React](https://img.shields.io/badge/Frontend-React%2018%20%2B%20Vite-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI%20ASGI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
@@ -19,11 +19,10 @@
   - [1. End-to-End System Architecture](#1-end-to-end-system-architecture)
   - [2. Multi-Persona EduBot RAG Pipeline](#2-multi-persona-edubot-rag-pipeline--document-dispatch)
   - [3. Admission-to-Alumni Student Lifecycle](#3-admission-to-alumni-student-lifecycle)
-  - [4. Smart Anti-Proxy Attendance Verification](#4-smart-anti-proxy-attendance-verification-pipeline)
-  - [5. Fee Payment & Ledger Reconciliation](#5-fee-payment--automated-ledger-reconciliation)
-  - [6. Blockchain / QR Tamper-Proof Certificates](#6-blockchain--qr-tamper-proof-certificate-verification)
-  - [7. Predictive Academic Risk & Early Warning Engine](#7-predictive-academic-risk-analytics--early-warning-engine)
-  - [8. Role-Based Access Control (RBAC) & Route Security](#8-role-based-access-control-rbac--route-security-flow)
+  - [4. Fee Payment & Ledger Reconciliation](#4-fee-payment--automated-ledger-reconciliation)
+  - [5. Blockchain / QR Tamper-Proof Certificates](#5-blockchain--qr-tamper-proof-certificate-verification)
+  - [6. Predictive Academic Risk & Early Warning Engine](#6-predictive-academic-risk-analytics--early-warning-engine)
+  - [7. Role-Based Access Control (RBAC) & Route Security](#7-role-based-access-control-rbac--route-security-flow)
 - [Stakeholder Experience Modules](#-stakeholder-experience-modules)
 - [Technology Stack](#-technology-stack)
 - [Project Structure](#-project-structure)
@@ -38,7 +37,7 @@
 
 - **Unified Multi-Stakeholder Ecosystem:** Tailored role-based interfaces with zero information silos across Student, Faculty, Admin, and Parent portals.
 - **Contextual Multi-Persona AI (EduBot):** Role-swapping intelligence featuring *AcadBot* (Student), *FacultyAI* (Faculty), *CampusOps* (Admin), and *GuardianBot* (Parent) delivering actionable answers and live institutional documents directly in chat.
-- **Multi-Modal Anti-Proxy Attendance:** 30-second time-based rotating QR tokens, classroom geofencing, facial recognition, and faculty override grids eliminating proxy roll-calls.
+- **Smart Attendance System:** Digital attendance management with faculty-controlled marking, class schedule integration, and automated attendance tracking per subject.
 - **Academic Early Warning Engine (EWS):** Regression model correlating attendance metrics, continuous internal marks, and submission latency to flag detention risks before end-semester exams.
 - **Tamper-Proof Credentialing:** Digital issuance of Bonafide certificates and grade sheets with cryptographic SHA-256 QR hash verification for instant public/employer validation.
 - **Parental Transparency Bridge:** Live visibility into daily attendance, SGPA/CGPA cards, fee payment gateways, and direct Parent-Teacher Meeting (PTM) booking.
@@ -177,44 +176,7 @@ stateDiagram-v2
 
 ---
 
-### 4. Smart Anti-Proxy Attendance Verification Pipeline
-Multi-modal attendance validation flow evaluating rotating time-based tokens, geofence boundary coordinates, and biometric matching before updating the ledger.
-
-```mermaid
-flowchart TD
-    Start([Faculty Initiates Lecture Session]) --> ModeChoice{Select Verification Mode}
-    
-    ModeChoice -->|Dynamic QR| GenQR[Generate 30-sec Rotating Time-Based QR Code]
-    ModeChoice -->|Geo-Fencing| GeoCheck[Broadcast Classroom Coordinates + 50m Radius]
-    ModeChoice -->|Face Biometrics| FaceDetect[Client Face Match vs Admission Photo]
-    ModeChoice -->|Manual| ManualList[Faculty One-Tap Attendance Grid]
-    
-    GenQR --> StudentScan[Student Scans QR via CampusEase Mobile/Web App]
-    GeoCheck --> StudentScan
-    FaceDetect --> StudentScan
-    
-    StudentScan --> ValidateToken{Is QR Token Valid & Unexpired?}
-    ValidateToken -- No --> Reject[Reject: QR Expired or Duplicate Submission]
-    ValidateToken -- Yes --> CheckGeo{Is Device within Classroom Bounds?}
-    
-    CheckGeo -- No --> RejectGeo[Reject: Geolocation Mismatch]
-    CheckGeo -- Yes --> MarkDB[(Write AttendanceRecord to PostgreSQL)]
-    ManualList --> MarkDB
-    
-    MarkDB --> CalcPct[Recalculate Cumulative Subject Attendance %]
-    CalcPct --> ThresholdCheck{Is Attendance < 75%?}
-    ThresholdCheck -- Yes --> AlertTrigger[Fire Early Warning Alert to Student & Parent Portal]
-    ThresholdCheck -- No --> SafeStatus[Mark in Good Academic Standing]
-    
-    AlertTrigger --> End([Session Complete & Records Synchronized])
-    SafeStatus --> End
-    Reject --> End
-    RejectGeo --> End
-```
-
----
-
-### 5. Fee Payment & Automated Ledger Reconciliation
+### 4. Fee Payment & Automated Ledger Reconciliation
 Complete transaction and settlement flow with payment gateway integration, server-side HMAC signature verification, and automated tax invoice generation.
 
 ```mermaid
@@ -245,7 +207,7 @@ sequenceDiagram
 
 ---
 
-### 6. Blockchain / QR Tamper-Proof Certificate Verification
+### 5. Blockchain / QR Tamper-Proof Certificate Verification
 Cryptographic SHA-256 hashing during institutional certificate generation paired with instant public scanning without requiring an authenticated account.
 
 ```mermaid
@@ -272,7 +234,7 @@ flowchart LR
 
 ---
 
-### 7. Predictive Academic Risk Analytics & Early Warning Engine
+### 6. Predictive Academic Risk Analytics & Early Warning Engine
 Continuous telemetry aggregation evaluating multi-factor student performance to trigger tiered remediation before detentions occur.
 
 ```mermaid
@@ -302,7 +264,7 @@ flowchart TD
 
 ---
 
-### 8. Role-Based Access Control (RBAC) & Route Security Flow
+### 7. Role-Based Access Control (RBAC) & Route Security Flow
 Defense-in-depth authorization filter validating JSON Web Tokens, active database account state, and role claims on every protected API endpoint.
 
 ```mermaid
@@ -484,4 +446,5 @@ For the complete 8-document hackathon submission dossier (Executive Synopsis, 12
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
-Developed with ❤️ for **Smart India Hackathon (SIH)**.
+Developed with ❤️ for **Idea & Innovation Hackathon 2026** | *Innovate for Madhya Pradesh. Build for Viksit Bharat.*
+> Organized by **MPOnline Limited** | 09–10 October 2026 | Bhopal, Madhya Pradesh
