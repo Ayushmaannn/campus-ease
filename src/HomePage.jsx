@@ -8,7 +8,6 @@ import Features from "./components/Shared/Features";
 import AdminFeatures from "./components/Admin/AdminFeatures";
 import ParentPortal from "./components/Parent/ParentDashboard";
 import StudentPortal from "./components/Student/StudentPortal";
-import StaffPortal from "./components/Staff/StaffPortal";
 import VideoThumb from "./components/Shared/VideoThumb";
 import TestimonialCarousel from "./components/Shared/TestimonialCarousel";
 import DemoForm from "./components/Shared/DemoForm";
