@@ -27,7 +27,7 @@ const MobileAppIntegration = () => {
 
   useEffect(() => {
     // Generate QR code for app download
-    setQrCode('https://play.google.com/store/apps/details?id=com.quickcampus.edu');
+    setQrCode('https://play.google.com/store/apps/details?id=com.CampusEase.edu');
     
     // Set app statistics
     setAppStats({
@@ -106,8 +106,8 @@ const MobileAppIntegration = () => {
 
   const downloadApp = (platform) => {
     const urls = {
-      android: 'https://play.google.com/store/apps/details?id=com.quickcampus.edu',
-      ios: 'https://apps.apple.com/app/quickcampus/id123456789'
+      android: 'https://play.google.com/store/apps/details?id=com.CampusEase.edu',
+      ios: 'https://apps.apple.com/app/CampusEase/id123456789'
     };
     window.open(urls[platform], '_blank');
   };
@@ -115,12 +115,12 @@ const MobileAppIntegration = () => {
   const shareApp = () => {
     if (navigator.share) {
       navigator.share({
-        title: 'QuickCampus Mobile App',
-        text: 'Download the QuickCampus mobile app for seamless campus experience!',
-        url: 'https://quickcampus.edu/mobile'
+        title: 'CampusEase Mobile App',
+        text: 'Download the CampusEase mobile app for seamless campus experience!',
+        url: 'https://CampusEase.edu/mobile'
       });
     } else {
-      navigator.clipboard.writeText('https://quickcampus.edu/mobile');
+      navigator.clipboard.writeText('https://CampusEase.edu/mobile');
       alert('App link copied to clipboard!');
     }
   };
@@ -136,7 +136,7 @@ const MobileAppIntegration = () => {
             className="flex items-center justify-center gap-3 mb-4"
           >
             <FaMobile className="text-4xl text-indigo-600" />
-            <h1 className="text-4xl font-bold text-gray-800">QuickCampus Mobile</h1>
+            <h1 className="text-4xl font-bold text-gray-800">CampusEase Mobile</h1>
           </motion.div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Experience the future of education with our AI-powered mobile app. 

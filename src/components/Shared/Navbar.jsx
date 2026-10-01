@@ -22,14 +22,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      style={{ top: 'var(--demo-banner-height, 0px)' }}
+      className={`fixed left-0 w-full z-40 transition-all duration-300 ${
         scrolled
           ? "bg-[#003566]/90 backdrop-blur-md shadow-lg"
           : "bg-[#003566]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-white">QuickCampus</h1>
+        <h1 className="text-2xl font-bold text-white">CampusEase</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 font-medium">

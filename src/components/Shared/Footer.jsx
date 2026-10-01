@@ -15,9 +15,9 @@ const Footer = () => {
         {/* Logo & About */}
         <div className="md:col-span-1">
           <div className="mb-4">
-            <div className="text-2xl font-bold">QuickCampus</div>
+            <div className="text-2xl font-bold">CampusEase</div>
             <p className="text-sm mt-2">
-              QuickCampus is a modern ERP platform for schools and colleges,
+              CampusEase is a modern ERP platform for schools and colleges,
               offering complete digital transformation through smart features
               like online fee payment, attendance, messaging, and more.
             </p>
@@ -38,7 +38,7 @@ const Footer = () => {
           <h4 className="font-semibold mb-2">About</h4>
           <ul className="space-y-1 text-sm">
             <li><a href="#">Company Overview</a></li>
-            <li><a href="#">Why QuickCampus?</a></li>
+            <li><a href="#">Why CampusEase?</a></li>
             <li><a href="#">Our Benefits</a></li>
             <li><a href="#">Mission & Vision</a></li>
             <li><a href="#">Leadership</a></li>
@@ -85,7 +85,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-2">
               <MdEmail />
-              <span>support@quickcampus.com</span>
+              <span>support@CampusEase.com</span>
             </li>
           </ul>
 
@@ -104,7 +104,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-[#003566] mt-8 pt-4 px-4 text-sm text-center text-[#003566]">
         <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
-          <p>© QuickCampus 2025. All rights reserved.</p>
+          <p>© CampusEase 2025. All rights reserved.</p>
           <div className="flex gap-4 mt-2 md:mt-0">
             <a href="#">Terms of Service</a>
             <a href="#">Privacy Policy</a>

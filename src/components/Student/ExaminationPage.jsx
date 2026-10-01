@@ -60,7 +60,7 @@ export default function ExaminationPage() {
         @media print { button { display: none; } }
       </style></head><body>
       <div class="header">
-        <div class="logo">🎓 QuickCampus ERP</div>
+        <div class="logo">🎓 CampusEase ERP</div>
         <div style="color:#6b7280;margin-top:6px;">Smart University Digital Campus</div>
         <h2 style="margin:12px 0 0;color:#1e40af;">EXAMINATION HALL TICKET</h2>
       </div>

@@ -27,7 +27,10 @@ const Studentmainlogin = () => {
         }`}
       >
         {/* Top Bar */}
-        <div className="sticky top-0 z-20 bg-gradient-to-r from-[#003566] to-[#002244] shadow-md px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
+        <div
+          style={{ top: 'var(--demo-banner-height, 0px)' }}
+          className="sticky z-20 bg-gradient-to-r from-[#003566] to-[#002244] shadow-md px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between"
+        >
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Hamburger Button on Mobile */}
             <button
@@ -38,7 +41,7 @@ const Studentmainlogin = () => {
               <FaBars />
             </button>
             <span className="text-white font-bold text-sm sm:text-base flex items-center gap-1.5">
-              <span>🎓</span> QuickCampus ERP
+              <span>🎓</span> CampusEase ERP
             </span>
           </div>
 

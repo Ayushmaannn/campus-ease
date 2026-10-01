@@ -175,7 +175,7 @@ const WELCOME_MESSAGES = {
   faculty: "Welcome, Professor! I'm **FacultyAI** 🍃 — your dedicated Teaching & Research Assistant, powered by Google Gemini.\n\nI can pull up your **class timetables**, generate **salary payslips**, track **leave balances**, review **predictive student analytics**, and manage your **grade submissions**.\n\nHow may I assist you today?",
   admin: "Greetings, Administrator! I'm **CampusOps** 🔶 — your AI-driven Campus Operations Intelligence, powered by Google Gemini.\n\nI can audit **admissions**, compile **financial summaries**, inspect **hostel occupancy**, monitor **campus IoT telemetry**, generate **policy documents**, and produce **analytics reports**.\n\nWhat operation would you like to initiate?",
   parent: "Welcome! I'm **GuardianBot** 💗 — your dedicated Parent Portal AI, powered by Google Gemini.\n\nI can share your child's **daily attendance**, **examination grades**, **fee payment dues**, **hostel welfare status**, and help you **schedule parent-teacher meetings**.\n\nWhat would you like to know about your child today?",
-  guest: "Welcome to **QuickCampus University**! I'm **CampusGuide** 🌐 — your AI admission and campus guide.\n\nAsk me anything about **available programs**, **admission eligibility**, **fee structure**, **campus facilities**, or **scholarship opportunities**!",
+  guest: "Welcome to **CampusEase University**! I'm **CampusGuide** 🌐 — your AI admission and campus guide.\n\nAsk me anything about **available programs**, **admission eligibility**, **fee structure**, **campus facilities**, or **scholarship opportunities**!",
 };
 
 // ─────────────────────────────────────────────────────────────────
@@ -670,7 +670,7 @@ export default function EduBot() {
                 <button
                   onClick={() => {
                     const el = document.createElement('a');
-                    const file = new Blob([`Official Document: ${activeModalDoc.title}\nInstitution: QuickCampus University\nIssued by: ${persona.botName}\nVerified with Blockchain & DigiLocker`], { type: 'text/plain' });
+                    const file = new Blob([`Official Document: ${activeModalDoc.title}\nInstitution: CampusEase University\nIssued by: ${persona.botName}\nVerified with Blockchain & DigiLocker`], { type: 'text/plain' });
                     el.href = URL.createObjectURL(file);
                     el.download = `${activeModalDoc.title.replace(/\s+/g, '_')}.txt`;
                     document.body.appendChild(el);
@@ -689,7 +689,7 @@ export default function EduBot() {
             <div className="p-6 overflow-y-auto bg-slate-100 flex-1">
               <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-200 text-gray-800 space-y-6 font-sans">
                 <div className="text-center border-b pb-4">
-                  <h1 className="text-xl font-bold tracking-wide text-indigo-900 uppercase">QuickCampus University of Technology</h1>
+                  <h1 className="text-xl font-bold tracking-wide text-indigo-900 uppercase">CampusEase University of Technology</h1>
                   <p className="text-xs text-gray-500">Autonomous Institution • Approved by AICTE • Accredited NAAC A++</p>
                   <div className="inline-block mt-3 px-3 py-1 bg-emerald-50 border border-emerald-300 text-emerald-800 rounded-full text-xs font-semibold">
                     ✓ DigiLocker Verified • Blockchain Certified
@@ -716,7 +716,7 @@ export default function EduBot() {
                   <div className="text-right">
                     <p className="font-serif italic font-bold text-gray-800 text-sm">Dr. Ramesh Chandra</p>
                     <p className="text-[11px] text-gray-500">Controller of Examinations & Registrar</p>
-                    <p className="text-[10px] text-gray-400">QuickCampus University</p>
+                    <p className="text-[10px] text-gray-400">CampusEase University</p>
                   </div>
                 </div>
               </div>

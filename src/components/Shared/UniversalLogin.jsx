@@ -15,75 +15,65 @@ import {
   FaArrowLeft
 } from 'react-icons/fa';
 
+// Demo credentials — frontend only, no backend required
+const DEMO_USERS = {
+  student: { username: 'student', password: 'student123', role: 'student', name: 'Rahul Sharma', id: 'demo-student-1' },
+  faculty: { username: 'faculty', password: 'faculty123', role: 'faculty', name: 'Dr. Priya Verma', id: 'demo-faculty-1' },
+  admin:   { username: 'admin',   password: 'admin123',   role: 'admin',   name: 'Admin User',   id: 'demo-admin-1' },
+  parent:  { username: 'parent',  password: 'parent123',  role: 'parent',  name: 'Suresh Sharma', id: 'demo-parent-1' },
+};
+
 const UniversalLogin = () => {
   const [selectedRole, setSelectedRole] = useState('student');
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  
+
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const roles = [
-    { id: 'student', name: 'Student', icon: <FaUserGraduate />, color: 'bg-blue-500' },
-    { id: 'faculty', name: 'Faculty', icon: <FaChalkboardTeacher />, color: 'bg-green-500' },
-    { id: 'admin', name: 'Admin', icon: <FaUserTie />, color: 'bg-purple-500' },
-    { id: 'parent', name: 'Parent', icon: <FaUsers />, color: 'bg-orange-500' }
+    { id: 'student', name: 'Student',  icon: <FaUserGraduate />,      color: 'bg-blue-500'   },
+    { id: 'faculty', name: 'Faculty',  icon: <FaChalkboardTeacher />,  color: 'bg-green-500'  },
+    { id: 'admin',   name: 'Admin',    icon: <FaUserTie />,            color: 'bg-purple-500' },
+    { id: 'parent',  name: 'Parent',   icon: <FaUsers />,              color: 'bg-orange-500' },
   ];
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
 
-    try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'}/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username: credentials.username,
-          password: credentials.password,
-          role: selectedRole
-        })
-      });
-      
-      if (response.ok) {
-        const data = await response.json();
-        
-        // Pass both user data and tokens to context
-        login({
-          ...data.user,
-          access_token: data.access_token,
-          refresh_token: data.refresh_token
-        });
-        
-        // Save tokens in localStorage (AuthContext usually handles user, but let's just make sure)
-        localStorage.setItem('access_token', data.access_token);
-        localStorage.setItem('refresh_token', data.refresh_token);
-        
-        // Navigate to appropriate dashboard
+    // Simulate a short loading delay for realism
+    setTimeout(() => {
+      const demo = DEMO_USERS[selectedRole];
+
+      if (
+        credentials.username === demo.username &&
+        credentials.password === demo.password
+      ) {
+        login({ ...demo });
+
         switch (selectedRole) {
           case 'student': navigate('/student'); break;
           case 'faculty': navigate('/faculty'); break;
-          case 'admin': navigate('/admin'); break;
-          case 'parent': navigate('/parent'); break;
-          default: navigate('/');
+          case 'admin':   navigate('/admin');   break;
+          case 'parent':  navigate('/parent');  break;
+          default:        navigate('/');
         }
       } else {
-        const errorData = await response.json().catch(() => null);
-        setError(errorData?.detail || `Invalid credentials for ${selectedRole}.`);
+        setError(`Invalid credentials. Use the demo credentials shown below.`);
       }
-    } catch (err) {
-      console.error(err);
-      setError("Failed to connect to the server. Is the backend running?");
-    } finally {
+
       setLoading(false);
-    }
+    }, 600);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4"
+      style={{ paddingTop: '56px' /* offset for fixed demo banner */ }}
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -106,9 +96,14 @@ const UniversalLogin = () => {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-4">
             <FaShieldAlt className="text-3xl text-blue-600" />
-            <h1 className="text-2xl font-bold text-gray-800">QuickCampus ERP</h1>
+            <h1 className="text-2xl font-bold text-gray-800">CampusEase ERP</h1>
           </div>
           <p className="text-gray-600">Secure Login Portal</p>
+          <div className="mt-3 px-4 py-2 bg-amber-50 border border-amber-300 rounded-lg">
+            <p className="text-amber-700 text-xs font-semibold">
+              🎯 Demo Mode — Use the credentials below to explore
+            </p>
+          </div>
         </div>
 
         {/* Role Selection */}
@@ -200,8 +195,8 @@ const UniversalLogin = () => {
         </form>
 
         {/* Demo Credentials */}
-        <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-          <h4 className="text-sm font-medium text-gray-700 mb-2">Demo Credentials:</h4>
+        <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+          <h4 className="text-sm font-semibold text-gray-700 mb-2">📋 Demo Credentials:</h4>
           <div className="text-xs text-gray-600 space-y-1">
             <p><strong>Student:</strong> student / student123</p>
             <p><strong>Faculty:</strong> faculty / faculty123</p>
@@ -212,8 +207,8 @@ const UniversalLogin = () => {
 
         {/* Footer */}
         <div className="mt-6 text-center">
-          <p className="text-xs text-gray-500">
-            Secure login powered by advanced encryption
+          <p className="text-xs text-gray-400">
+            CampusEase — Idea &amp; Innovation Hackathon 2026 Prototype
           </p>
         </div>
       </motion.div>

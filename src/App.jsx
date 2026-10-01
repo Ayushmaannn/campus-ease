@@ -4,6 +4,7 @@ import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/Shared/ProtectedRoute";
 import UniversalLogin from "./components/Shared/UniversalLogin";
 import EduBot from "./components/Shared/EduBot";
+import DemoBanner from "./components/Shared/DemoBanner";
 
 // General Pages
 import HomePage from "./HomePage";
@@ -70,6 +71,7 @@ const App = () => {
   return (
     <AuthProvider>
       <Router>
+      <DemoBanner />
       <Routes>
         {/* General Routes */}
         <Route path="/" element={<HomePage />} />
